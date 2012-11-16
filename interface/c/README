@@ -1,0 +1,3 @@
+./configure  --with-cwinux=/usr/home/wenbo/install --prefix=/usr/home/wenbo/install/
+make
+make install

@@ -1,0 +1,25 @@
+#set_data_dir ./cwx_kv.db
+#set_lg_dir ./testenv_log
+set_flags DB_TXN_NOSYNC
+#set_verbose DB_VERB_FILEOPS_ALL
+#set_verbose DB_VERB_DEADLOCK
+#set_verbose DB_VERB_RECOVERY
+#set_verbose DB_VERB_REPLICATION
+
+# ================ Logging Subsystem =====================
+#50M
+set_lg_max   52428800
+#50M
+set_lg_bsize 52428800
+#256M
+set_mp_mmapsize  268435456
+
+# ================ Memory Pool =====================
+#set_cachesize 0 67108864 0
+
+
+# ================ Locking Subsystem =====================
+#set_lk_detect DB_LOCK_OLDEST
+set_lk_max_lockers 300000
+set_lk_max_locks   300000
+set_lk_max_objects 300000

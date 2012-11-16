@@ -1,0 +1,17 @@
+[counter_bench]
+home=/usr/home/unistor/trunk/unistor/unistor_bench
+listen=172.162.142.163:2263
+conn_num=500
+conn_lasting=1
+key_type=int32/int64/int128/int256/char
+counter=comment;trans
+value=10
+data_opr=get
+data_base=10000000
+data_mod=0
+data_master=yes
+data_group=1
+data_group_index=0
+cache=yes
+user=unistor
+passwd=unistor

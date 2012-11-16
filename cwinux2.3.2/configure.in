@@ -1,0 +1,28 @@
+# Required initializer
+AC_INIT
+
+# Automake initialization
+AM_INIT_AUTOMAKE(cwinux, 1.0)
+
+# Add a test for a compiler.
+AC_PROG_CC
+AM_PROG_LIBTOOL
+
+
+LIBEVENT_DIR
+
+AC_DEFINE(_LARGEFILE64_SOURCE)
+AC_DEFINE(_FILE_OFFSET_BITS,64)
+AC_DEFINE(_LARGEFILE64_SOURCE)
+AC_DEFINE(_REENTRANT)
+AC_DEFINE(_GNU_SOURC)
+
+
+# The AC_SUBST macro causes the variable to be saved in config.status
+
+# Write config.status and the Makefile
+AC_OUTPUT(Makefile)
+AC_OUTPUT(lib/cmn/src/Makefile)
+AC_OUTPUT(lib/net/src/Makefile)
+AC_OUTPUT(lib/app/src/Makefile)
+

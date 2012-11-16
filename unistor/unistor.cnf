@@ -1,0 +1,83 @@
+#common conf
+[common]
+home=/usr/home/wenbo/jpool/src/unistor/trunk/unistor/unistor/bin
+thread_num=1
+store_type=bdbc
+sock_buf_kbyte=8192
+max_chunk_kbyte=1024
+write_cache_flush_num=100000
+write_cache_flush_second=100
+host=172.16.42.63
+idc=yf
+group=1
+monitor=*:9666
+trans_conn_num=20
+sync_conn_num=20
+read_cache_mbyte=3000
+read_cache_max_key_num=100000000
+write_cache_mbyte = 128
+master_lost_binlog = 100000
+enable_expire=no
+expire_default=3600
+expire_concurrent = 100
+max_write_queue_messge=10000
+max_trans_message=10000
+[zk]
+server=172.16.42.63:2181
+auth=
+root=/unistor
+
+[inner_dispatch]
+user=dwb
+passwd=dwb
+listen=*:9667
+
+[outer_dispatch]
+user=dwb1
+passwd=dwb1
+listen=*:9668
+
+[recv]
+user=dwb2
+passwd=dwb2
+listen=*:9669
+
+[binlog]
+path=/data2/kv_data/data/binlog
+file_prefix=binlog
+file_max_mbyte=1024
+max_file_num=24
+del_out_file=yes
+cache=no
+flush_log_num=100000
+flush_log_second=100
+
+[bdb]
+env_home=/data3/bdb_home
+db_path=/data4/bdb_data
+compress=no
+cache_msize=4192
+page_ksize = 32
+[weiboc]
+env_home=/data3/bdb_home
+db_path=/data4/bdb_data
+compress=no
+cache_msize=6120
+page_ksize = 32
+group_start_time_bit =0
+group_end_time_bit=5
+resoved_day=0
+counter_def_file=/usr/home/wenbo/jpool/src/unistor/trunk/unistor/unistor/bin/counter_def.dat
+[bdbc]
+env_home=/data3/bdb_home
+db_path=/data4/bdb_data
+compress=no
+cache_msize=6120
+page_ksize = 32
+key_type=int64
+int32_hex=no
+int64_hex=yes
+hex_upper=true
+group_start_time_bit =0
+group_end_time_bit=5
+counter_def_file=/usr/home/wenbo/jpool/src/unistor/trunk/unistor/unistor/bin/counter_def.dat
